@@ -1,29 +1,25 @@
-<!-- HTML -->
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div>
+    {{ message }}
+  </div>
+  <button @click="showAlert">경고</button>
 </template>
 
-<!-- JavaScript -->
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
+  data() {
+    return {
+      message: 'hi'
+    }
+  },
+  methods: {
+    showAlert() {
+      alert('hello')
+    }
   }
 }
 </script>
 
-<!-- CSS -->
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+<style scoped>
+
 </style>
