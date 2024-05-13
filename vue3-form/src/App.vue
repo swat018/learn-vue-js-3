@@ -14,20 +14,19 @@
 
 <script>
   import axios from 'axios'
+  import {ref} from "vue";
 
   export default {
-    data() {
-      return {
-        username: '',
-        password: ''
-      }
-    },
-    methods: {
-      submitForm() {
-        // e.preventDefault()
+    setup() {
+      // data
+      var username = ref('')
+      var password = ref('')
+
+      // methods
+      var submitForm = () => {
         const data = {
-          username: this.username,
-          password: this.password
+          username: username.value,
+          password: password.value
         }
         axios.post('https://jsonplaceholder.typicode.com/users', data)
             .then(response => {
@@ -35,7 +34,29 @@
             })
         console.log("제출됨")
       }
-    }
+
+      return { username, password, submitForm }
+    },
+    // data() {
+    //   return {
+    //     username: '',
+    //     password: ''
+    //   }
+    // },
+    // methods: {
+    //   submitForm() {
+    //     // e.preventDefault()
+    //     const data = {
+    //       username: this.username,
+    //       password: this.password
+    //     }
+    //     axios.post('https://jsonplaceholder.typicode.com/users', data)
+    //         .then(response => {
+    //           console.log(response)
+    //         })
+    //     console.log("제출됨")
+    //   }
+    // }
   }
 </script>
 
