@@ -1,9 +1,5 @@
 <template>
-  <AppHeader></AppHeader>
-  <div>
-    {{ message }}
-  </div>
-  <button @click="showAlert">경고</button>
+  <AppHeader :appTitle="message" @change="changeMessage"></AppHeader>
 </template>
 
 <script>
@@ -20,12 +16,12 @@
     },
     data() {
       return {
-        message: 'hi'
+        message: '앱 헤더 컴포넌트'
       }
     },
     methods: {
-      showAlert() {
-        alert('hello')
+      changeMessage() {
+        this.message = '변경됨'
       }
     }
   }
