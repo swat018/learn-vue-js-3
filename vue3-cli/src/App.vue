@@ -1,8 +1,10 @@
+<!-- HTML -->
 <template>
   <img alt="Vue logo" src="./assets/logo.png">
   <HelloWorld msg="Welcome to Your Vue.js App"/>
 </template>
 
+<!-- JavaScript -->
 <script>
 import HelloWorld from './components/HelloWorld.vue'
 
@@ -14,6 +16,7 @@ export default {
 }
 </script>
 
+<!-- CSS -->
 <style>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
